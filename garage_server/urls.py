@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 router=DefaultRouter()
 router.register('signup',UsersignUpViewSet,basename='signup')
 router.register('customer',CustomerViewSet,basename='customer')
+router.register('service',ServiceViewSet,basename='service')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
