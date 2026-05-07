@@ -29,5 +29,5 @@ router.register('service',ServiceViewSet,basename='service')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('token/',obtain_auth_token)
+    path('token',obtain_auth_token)
 ]+router.urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

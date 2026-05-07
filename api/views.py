@@ -26,6 +26,9 @@ class CustomerViewSet(ModelViewSet):
     def perform_create(self, serializer):
         return serializer.save(mechanic=self.request.user)
     
+    def get_queryset(self):
+        return self.queryset.filter(mechanic=self.request.user)
+    
     @action(methods="POST",detail=True)
     def addservices(self,request,pk=0):
         customer=self.get_object()
